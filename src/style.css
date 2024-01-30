@@ -1,5 +1,12 @@
 body {
-  background-color: rgb(237, 237, 255);
+  background: rgb(231, 255, 253);
+  background: radial-gradient(
+    circle,
+    rgba(231, 255, 253, 0.5673352435530086) 2%,
+    rgba(33, 120, 140, 0.26327944572748263) 12%,
+    rgba(114, 206, 201, 0.7897727272727273) 58%,
+    rgba(91, 112, 120, 0.3607954545454546) 89%
+  );
   font-family: "Comfortaa", sans-serif;
 }
 header {
@@ -14,22 +21,23 @@ a {
   max-width: 600px;
   margin: 45px auto;
   padding: 30px;
-  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+  box-shadow: 0 40px 60px rgba(65, 50, 100, 0.08);
+
   border-radius: 16px;
 }
 .search-input {
-  background-color: rgb(237, 237, 255);
+  background-color: #b6cbcd28;
   border: none;
   border-radius: 6px;
   width: 70%;
   padding: 15px 20px;
 }
 .search-button {
-  background-color: purple;
+  background-color: #aadada;
   padding: 15px 30px;
   border: none;
   border-radius: 6px;
-  color: white;
+  color: black;
   margin-left: 5px;
   font-size: 16px;
 }
