@@ -23,12 +23,13 @@
   <body>
     <div class="weather-app">
       <header>
-        <form class="search-engine">
+        <form class="search-engine" id="search-form">
           <input
             type="search"
             placeholder="Enter a city..."
             required
             class="search-input"
+            id="citySearched"
           />
           <input type="submit" value="Search" class="search-button" />
         </form>
@@ -36,7 +37,7 @@
       <main>
         <div class="weather-app-data">
           <div>
-            <h1 class="weather-app-city">City</h1>
+            <h1 class="weather-app-city" id="weather-current-city">City</h1>
             <p class="weather-details">
               Tuesday 17:49l, scattered clouds <br />
               Humidty: <strong>66%,</strong> Wind: <strong>3.13km/h</strong>
@@ -63,5 +64,6 @@
         <a href="https://courageous-kleicha-c5631a.netlify.app/">Netlify</a>
       </footer>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
