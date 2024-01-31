@@ -7,12 +7,14 @@ function updateWeather(response) {
   let windElement = document.querySelector("#wind");
   let timeElement = document.querySelector("#current-time");
 
+  let date = currentDate(new Date(response.data.time));
+
   temperature.innerHTML = Math.round(realtimeTemp);
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
-  timeElement.innerHTML = currentDate(new Date(response.data.time * 1000));
+  timeElement.innerHTML = currentDate(new Date(response.data.time));
 }
 
 function currentDate(date) {
@@ -27,6 +29,7 @@ function currentDate(date) {
     "Friday",
     "Saturday",
   ];
+
   let day = days[date.getDay()];
   if (minutes < 10) {
     minutes = `0${minutes}`;
