@@ -75,6 +75,7 @@ main {
   font-size: 80px;
   font-weight: bold;
   margin-left: 10px;
+  line-height: 88px;
 }
 .icon {
   font-size: 44px;
@@ -83,4 +84,8 @@ main {
 .unit {
   margin-top: 16px;
   font-size: 28px;
+}
+.icon {
+  width: 88px;
+  height: 88px;
 }

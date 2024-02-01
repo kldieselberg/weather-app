@@ -6,15 +6,16 @@ function updateWeather(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let timeElement = document.querySelector("#current-time");
-
   let date = currentDate(new Date(response.data.time));
+  let iconElement = document.querySelector("#icon");
 
+  iconElement.innerHTML = `<img src "${response.data.condition.icon_url}">`;
   temperature.innerHTML = Math.round(realtimeTemp);
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
-  timeElement.innerHTML = currentDate(new Date(response.data.time));
+  timeElement.innerHTML = date;
 }
 
 function currentDate(date) {
