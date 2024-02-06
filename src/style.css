@@ -89,3 +89,7 @@ main {
   width: 88px;
   height: 88px;
 }
+.forecast {
+  margin-top: 20px;
+  text-align: center;
+}
