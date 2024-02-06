@@ -34,9 +34,8 @@ function currentDate(date) {
   let day = days[date.getDay()];
   if (minutes < 10) {
     minutes = `0${minutes}`;
-
-    return `${day} ${hour}:${minutes}`;
   }
+  return `${day} ${hour}:${minutes}`;
 }
 
 function searchCity(city) {
