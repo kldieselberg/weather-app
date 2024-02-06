@@ -51,7 +51,41 @@ function citySearchResult(event) {
   searchCity(searchInput.value);
 }
 
+function forecastDisplay() {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+     <div class="row">
+       <div class="col-2">
+         <div class="forecast-date">${day}</div>
+         <div class="image-1">
+           <img
+             src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png"
+             alt=""
+             width="36px"
+           />
+           <div class="forecast-temp">
+             <div class="minmax-1">
+               <span>18 </span>
+               <span>22</span>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     `;
+  });
+
+  let forecast = document.querySelector("#forecast");
+  forecast.innerHTML = forecastHtml;
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", citySearchResult);
 
 searchCity("Bangkok");
+forecastDisplay();
