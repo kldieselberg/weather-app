@@ -108,3 +108,6 @@ main {
 #min {
   opacity: 50%;
 }
+.forecast-date {
+  text-align: center;
+}
