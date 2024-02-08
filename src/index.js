@@ -65,23 +65,22 @@ function forecastDisplay(response) {
 
   let forecastHtml = "";
 
-  days.forEach(function (day) {
+  response.data.daily.forEach(function (day) {
     forecastHtml =
       forecastHtml +
       `
      <div class="row">
        <div class="col-2">
-         <div class="forecast-date">${day}</div>
+         <div class="forecast-date">Tue</div>
          <div class="image-1">
            <img
-             src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png"
-             alt=""
-             width="36px"
+             src="${day.condition.icon_url}"
+             class= "weather-forecast-icon"
            />
            <div class="forecast-temp">
              <div class="minmax-1">
-               <span>18 </span>
-               <span>22</span>
+               <strong>${Math.round(day.temperature.maximum)}° </strong>
+               <span id = "min">${Math.round(day.temperature.minimum)}°</span>
              </div>
            </div>
          </div>
