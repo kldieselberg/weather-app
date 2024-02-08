@@ -6,7 +6,7 @@ function updateWeather(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let timeElement = document.querySelector("#current-time");
-  let date = currentDate(new Date(response.data.time));
+  let date = currentDate(new Date(response.data.time * 1000));
   let iconElement = document.querySelector("#icon");
 
   iconElement.innerHTML = `<img src = "${response.data.condition.icon_url}">`;
