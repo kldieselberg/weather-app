@@ -16,6 +16,8 @@ function updateWeather(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
   timeElement.innerHTML = date;
+
+  grabForecast(response.data.city);
 }
 
 function currentDate(date) {
@@ -51,8 +53,16 @@ function citySearchResult(event) {
   searchCity(searchInput.value);
 }
 
-function forecastDisplay() {
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+function grabForecast(city) {
+  let apiKey = "f6fb43beoc84b39t6ab37d400ab015a0";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(forecastDisplay);
+  console.log(apiUrl);
+}
+
+function forecastDisplay(response) {
+  console.log(response.data);
+
   let forecastHtml = "";
 
   days.forEach(function (day) {
@@ -88,4 +98,5 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", citySearchResult);
 
 searchCity("Bangkok");
+
 forecastDisplay();
